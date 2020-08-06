@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+h1 {
+    line-height: 70px;
+}
+
+.logo {
+    max-height: 65px;
+    margin: 10px 50px 10px 20px;
+}
+
+.main-menu {
+    display: inline-flex;
+}
+
+.main-menu p {
+    padding: 15px;
+    font-size: 1.5em;
+
+}
+
+.main-menu p a{
+    text-decoration: none;
+    color: black;
+}
+
+.main-menu p a:hover {
+    color: darkgrey;
+    text-decoration: underline;
+}
+
+.pic {
+    width: 100vw;
+}
