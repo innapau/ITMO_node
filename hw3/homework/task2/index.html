@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Node.js and Ajax</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <button onclick="getUsers()">Показать пользователей</button>
+        <div id="container">
+
+        </div>
+        <script>
+            function getUsers() {
+                $.ajax({
+                    type: "GET",
+                    url: "/users",
+                    success: function (response) {
+                        const container = document.getElementById("container");
+                        let users = response;
+                        let ul = document.createElement('ul');
+                        for (let i = 0; i < users.length; i++) {
+                            let li = document.createElement('li');
+                            li.innerHTML = `<p>Имя: ${users[i].name}</p>
+                                            <p>Фамилия: ${users[i].lastname}</p>
+                                            <p>Возраст: ${users[i].age}</p>`;
+                            ul.appendChild(li);
+                        };
+                        container.appendChild(ul);
+                    },
+                });
+            };
+        </script>
+    </body>
+</html>

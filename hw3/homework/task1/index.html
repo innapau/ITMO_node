@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Node.js and Ajax</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="container">
+
+        </div>
+        <button onclick="getContent()">Получить данные</button>
+        <script>
+            function getContent() {
+                $.ajax({
+                    type: "GET",
+                    url: "/ajax.html",
+                    success: function (response) {
+                        const container = document.getElementById("container");
+                        container.innerHTML = response;
+                    },
+                });
+            };
+        </script>
+    </body>
+</html>
